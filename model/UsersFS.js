@@ -28,13 +28,13 @@ class Model_UserFS {
     getUser = async (id) => {
         const users = await this.readFile();
         if (id) {
-            const userFound = users.find(user => user.id === id);
+            const userFound = users.find(user => user.uname === id);
             return userFound || {};
         }
     }
 
     modifyUser = async (id, user) => {
-        const users = this.readFile();
+        const users = await this.readFile();
         const index  = users.findIndex(user => user.id === id);
         if (index != -1) {
             const actualUser = users[index];
