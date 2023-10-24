@@ -49,16 +49,17 @@ class Model_UserFS {
 
     createUser = async (user) => {
         const users = await this.readFile();
-        const exist = users.find(thisUser => thisUser.name === user.name)
+        const exist = users.find(thisUser => thisUser.uname === user.uname)
         if (!exist) {
             if (user.uname && user.pass) {
-                user.id = String(parseInt(users[users.length -1]?.id || 0));
+                user.id = String(parseInt(users[users.length -1]?.id || 0) + 1);
                 user.uname = String(user.uname);
                 user.pass = String(user.pass);
                 user.inventory = [];
                 user.escene = 'E0';
                 users.push(user);
                 await this.writeFile(users)
+                return user
             } else {
                 console.log('falta datos');
             }
