@@ -1,0 +1,117 @@
+[
+    {
+        "cards": "Login",
+        "content": {
+            "login": {
+                "title": "Sobreviviente",
+                "error":"no hay nada"
+            },
+            "left": false,
+            "right": false
+        }
+    },
+    {
+        "cards": "Inventory",
+        "content": {
+            "inventory": [],
+            "left":false,
+            "right":false
+        }
+    },
+    {
+        "cards": "E0",
+        "content": {
+            "history": {
+                "title":"La playa",
+                "text":"La brisa marina acaricia tu rostro mientras el sonido de las olas rompiendo en la orilla llena tus oídos. La playa se extiende a tu alrededor, con su arena dorada bajo tus pies. A medida que tus ojos se acostumbran a la luz del día, notás que estás rodeado de una densa jungla en la que los árboles altos y exuberantes parecen esconder secretos.\nLas hojas de la jungla crujen y los cantos de aves desconocidas llenan el aire. Ante ti, una oscura abertura se abre en la densa vegetación, revelando una cueva misteriosa. A lo lejos, entre los restos de un naufragio, vislumbrás destellos metálicos que llaman tu atención. Las opciones son claras"
+            },
+            "image": "./Assets/soloFondo.png",
+            "answers": [
+                {
+                    "text": "Explorar Jungla",
+                    "next": "E1a"
+                },
+                {
+                    "text": "Explorar Cueva",
+                    "next": "E1b"
+                },
+                {
+                    "text": "Revisar los restos del naufragio",
+                    "next": "E1c"
+                }
+            ]
+        }
+    },
+    {
+        "cards": "E1a",
+        "content": {
+            "history": {
+                "title":"La maleza",
+                "text":"Al intentar adentrarte, la maleza con espinas te lastima. Sientes cómo los afilados arbustos se clavan en tu piel, causando un dolor punzante y dejando pequeñas heridas que comienzan a sangrar. A pesar de la incomodidad, tu curiosidad y determinación te impulsan a continuar. El sendero se estrecha a medida que avanzas, pero la sensación de descubrimiento te llena de emoción y expectativa."
+            },
+            "image": "./Assets/Espinas1.png",
+            "answers": [
+                {
+                    "text": "Adentrarte entre la maleza",
+                    "next": "E0"
+                },
+                {
+                    "text": "Volvés a la playa",
+                    "next": "E0"
+                },
+                {
+                    "text": "Abrirte paso con machete",
+                    "next": "E0"
+                }
+            ]
+        }
+    },
+    {
+        "cards": "E1b",
+        "content": {
+            "history": {
+                "title":"La cueva",
+                "text":"Te encuentras frente a un esqueleto, su mirada vacía parece atravesarte mientras te acercas. Decides hablarle en un intento por romper el silencio sobrenatural. El esqueleto te dirige una mirada enigmática, como si entendiera tus palabras. En tu mente, escuchas sus respuestas proyectadas"
+            },
+            "image": "./Assets/CuevaE2.png",
+            "answers": [
+                {
+                    "text": "Venís siempre por acá?",
+                    "next": "E0"
+                },
+                {
+                    "text": "Es seguro este vecindario?",
+                    "next": "E0"
+                },
+                {
+                    "text": "Tranquilo, no hay caníbales",
+                    "next": "E0"
+                }
+            ]
+        }
+    },
+    {
+        "cards": "E1c",
+        "content": {
+            "history": {
+                "title":"Naufragio",
+                "text":"A pocos metros de la orilla, se divisa parte del naufragio. La curiosidad te impulsa a investigar más de cerca. ¿Te aventuras a nadar hasta allí o prefieres revisar los restos esparcidos por la playa?"
+            },
+            "image": "./Assets/Naufragio1.jpeg",
+            "answers": [
+                {
+                    "text": "Nadás hacia él",
+                    "next": "E0"
+                },
+                {
+                    "text": "Revisás los restos",
+                    "next": "E0"
+                },
+                {
+                    "text": "Revisar los restos del naufragio",
+                    "next": "E0"
+                }
+            ]
+        }
+    }
+]

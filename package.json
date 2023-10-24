@@ -1,0 +1,24 @@
+{
+  "name": "servidorsuts",
+  "version": "1.0.0",
+  "description": "ServidorSuts",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/legonma/ServidorSuts.git"
+  },
+  "author": "Sica/Bani/Barrandeguy/Legon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/legonma/ServidorSuts/issues"
+  },
+  "homepage": "https://github.com/legonma/ServidorSuts#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
+}
