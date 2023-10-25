@@ -25,10 +25,10 @@ class Model_UserFS {
         }
     }
 
-    getUser = async (id) => {
+    getUser = async (name) => {
         const users = await this.readFile();
-        if (id) {
-            const userFound = users.find(user => user.uname === id);
+        if (name) {
+            const userFound = users.find(user => user.uname === name);
             return userFound || {};
         }
     }

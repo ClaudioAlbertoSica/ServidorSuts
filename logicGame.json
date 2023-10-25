@@ -53,7 +53,7 @@
             "answers": [
                 {
                     "text": "Adentrarte entre la maleza",
-                    "next": "E0"
+                    "next": "E2a"
                 },
                 {
                     "text": "Volvés a la playa",
@@ -110,6 +110,22 @@
                 {
                     "text": "Revisar los restos del naufragio",
                     "next": "E0"
+                }
+            ]
+        }
+    },
+    {
+        "cards": "E2a",
+        "content": {
+            "history": {
+                "title":"Serpiente",
+                "text":"Mientras avanzas, un escalofrío recorre tu espalda, alertándote de la presencia sigilosa de un par de ojos brillantes entre las sombras. Una serpiente, elegantemente escondida entre las ramas, se lanza hacia ti con un siseo amenazante, interrumpiendo la calma de la selva."
+            },
+            "image": "./Assets/Serpiente.png",
+            "answers": [
+                {
+                    "text": "Estas Muerto. Login",
+                    "next": "Dead"
                 }
             ]
         }
