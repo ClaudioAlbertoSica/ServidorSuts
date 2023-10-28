@@ -5,9 +5,9 @@ class Controler_Items {
         this.service = new service();
     }
 
-    obtenerEscena = async (req,res) => {
+    getItem = async (req,res) => {
         const {id} = req.params;
-        const item = await this.service.getEscene(id);
+        const item = await this.service.getItem(id);
         res.json(item);
     }
 }

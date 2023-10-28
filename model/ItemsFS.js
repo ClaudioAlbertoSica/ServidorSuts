@@ -17,7 +17,7 @@ class Model_ItemsFS {
 
     }
 
-    getEscene = async (id) => {
+    getItem = async (id) => {
         const items = await this.readFile();
         if (id) {
             const itemFound = items.find(item => item.id === id);

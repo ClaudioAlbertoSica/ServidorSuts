@@ -117,5 +117,50 @@
 			}
 		],
 		"escene": "Inventory"
+	},
+	{
+		"uname": "test",
+		"pass": "1234",
+		"id": "8",
+		"inventory": [],
+		"escene": "E0"
+	},
+	{
+		"uname": "l",
+		"pass": "1",
+		"id": "9",
+		"inventory": [],
+		"escene": "E2eb"
+	},
+	{
+		"uname": "ava",
+		"pass": "1",
+		"id": "10",
+		"inventory": [],
+		"escene": "E0"
+	},
+	{
+		"uname": "m",
+		"pass": "1",
+		"id": "11",
+		"inventory": [
+			{
+				"id": "2",
+				"title": "Machete",
+				"text": "Elemento para cortar, muy util para abrite paso",
+				"count": 1,
+				"img": "./Assets/Inventory/Machete.png",
+				"imgDesc": "./Assets/Inventory/Machete.png"
+			},
+			{
+				"id": "1",
+				"title": "Manzana",
+				"text": "Parece una obra de arte en medio de la exuberante jungla de la isla. A medida que te acercas, puedes jurar que te guiña un ojo, burlándose de ti con su apariencia irresistible. Dale un bocado y prueba tu cordura",
+				"count": 1,
+				"img": "./Assets/Inventory/appleItemDesc.png",
+				"imgDesc": "./Assets/Inventory/appleItemDesc.png"
+			}
+		],
+		"escene": "Inventory"
 	}
 ]

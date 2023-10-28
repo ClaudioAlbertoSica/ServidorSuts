@@ -147,13 +147,13 @@
                     "text": "Machete",
                     "next": "E2eb",
                     "noFlip": true,
-                    "inventory": [{"title": "Machete", "text":"Elemento para cortar, muy util para abrite paso", "count":1, "img": "./Assets/Inventory/Machete.png", "id": "1"}]
+                    "itemId": 1
                 },
                 {
                     "text": "Manzana",
                     "next": "E2eb",
                     "noFlip": true,
-                    "inventory": [{"title": "Manzana", "text":"Parece una obra de arte en medio de la exuberante jungla de la isla.  A medida que te acercas, puedes jurar que te guiña un ojo, burlándose de ti con su apariencia irresistible. Dale un bocado y prueba tu cordura", "count":1, "img": "./Assets/Inventory/appleItem.webp", "imgDesc":"./Assets/Inventory/appleItem.png", "id": "2"}]
+                    "itemId": 2
                 }
             ]
         }

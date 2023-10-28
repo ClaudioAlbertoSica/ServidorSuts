@@ -13,6 +13,6 @@
         "text":"Elemento para cortar, muy util para abrite paso",
         "count":1,
         "img": "./Assets/Inventory/Machete.png",
-        "imgDesc": "./Assets/Inventory/Machete.png"
+        "imgDesc": "./Assets/Inventory/MacheteDesc.png"
     }
 ]
