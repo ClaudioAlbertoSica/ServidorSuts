@@ -38,7 +38,7 @@ class Model_UserFS {
         const index  = users.findIndex(user => user.id === id);
         if (index != -1) {
             const actualUser = users[index];
-            const userMod = {...actualUser, ...user};
+            const userMod = {...actualUser, ...user, inventory:[...actualUser.inventory, ...user.inventory]};
             users.splice(index, 1, userMod);
             await this.writeFile(users);
             return userMod;

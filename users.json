@@ -1,1 +1,121 @@
-[]
+[
+	{
+		"uname": "Mar",
+		"pass": "1",
+		"id": "1",
+		"inventory": [
+			{
+				"title": "Machete",
+				"text": "Elemento para cortar, muy util para abrite paso",
+				"count": 1,
+				"id": "1"
+			}
+		],
+		"escene": "Inventory"
+	},
+	{
+		"uname": "Fer",
+		"pass": "1",
+		"id": "2",
+		"inventory": [
+			{
+				"title": "Machete",
+				"text": "Elemento para cortar, muy util para abrite paso",
+				"count": 1,
+				"img": "./Assets/Inventory/Machete.png",
+				"id": "1"
+			},
+			{
+				"title": "Manzana",
+				"text": "Parece una obra de arte en medio de la exuberante jungla de la isla.  A medida que te acercas, puedes jurar que te guiña un ojo, burlándose de ti con su apariencia irresistible. Dale un bocado y prueba tu cordura",
+				"count": 1,
+				"img": "./Assets/Inventory/appleItem.webp",
+				"id": "2"
+			}
+		],
+		"escene": "Inventory"
+	},
+	{
+		"uname": "Marian",
+		"pass": "1",
+		"id": "3",
+		"inventory": [
+			{
+				"title": "Manzana",
+				"text": "Parece una obra de arte en medio de la exuberante jungla de la isla.  A medida que te acercas, puedes jurar que te guiña un ojo, burlándose de ti con su apariencia irresistible. Dale un bocado y prueba tu cordura",
+				"count": 1,
+				"img": "./Assets/Inventory/appleItem.webp",
+				"id": "2"
+			}
+		],
+		"escene": "Inventory"
+	},
+	{
+		"uname": "c",
+		"pass": "2",
+		"id": "4",
+		"inventory": [],
+		"escene": "Inventory"
+	},
+	{
+		"uname": "Max",
+		"pass": "1",
+		"id": "5",
+		"inventory": [
+			{
+				"title": "Machete",
+				"text": "Elemento para cortar, muy util para abrite paso",
+				"count": 1,
+				"img": "./Assets/Inventory/Machete.png",
+				"id": "1"
+			}
+		],
+		"escene": "Inventory"
+	},
+	{
+		"uname": "a",
+		"pass": "1",
+		"id": "6",
+		"inventory": [
+			{
+				"title": "Manzana",
+				"text": "Parece una obra de arte en medio de la exuberante jungla de la isla.  A medida que te acercas, puedes jurar que te guiña un ojo, burlándose de ti con su apariencia irresistible. Dale un bocado y prueba tu cordura",
+				"count": 1,
+				"img": "./Assets/Inventory/appleItem.png",
+				"imgDes": "./Assets/Inventory/appleItem.webp",
+				"id": "2"
+			}
+		],
+		"escene": "Inventory"
+	},
+	{
+		"uname": "admin",
+		"pass": "1",
+		"id": "7",
+		"inventory": [
+			{
+				"title": "Manzana",
+				"text": "Parece una obra de arte en medio de la exuberante jungla de la isla.  A medida que te acercas, puedes jurar que te guiña un ojo, burlándose de ti con su apariencia irresistible. Dale un bocado y prueba tu cordura",
+				"count": 1,
+				"img": "./Assets/Inventory/appleItem.webp",
+				"imgDesc": "./Assets/Inventory/appleItem.png",
+				"id": "2"
+			},
+			{
+				"title": "Machete",
+				"text": "Elemento para cortar, muy util para abrite paso",
+				"count": 1,
+				"img": "./Assets/Inventory/Machete.png",
+				"id": "1"
+			},
+			{
+				"title": "Machete",
+				"text": "Elemento para cortar, muy util para abrite paso",
+				"count": 1,
+				"img": "./Assets/Inventory/Machete.png",
+				"id": "1"
+			}
+		],
+		"escene": "Inventory"
+	}
+]

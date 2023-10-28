@@ -10,6 +10,8 @@ app.use(express.urlencoded({extended: true})); //preguntar bien
 app.use(cors());
 app.use('/api/users', new RouterUsers().start());
 app.use('/api/game', new RouterGame().start());
+app.use('/api/items', new RouterGame().start());
+
 
 const PORT = 8080;
 const server = app.listen(PORT, () => console.log(`Servidor express escuchando en http://localhost:${PORT}`));
