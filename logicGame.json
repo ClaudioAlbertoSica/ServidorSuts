@@ -23,7 +23,7 @@
         "content": {
             "history": {
                 "title":"La playa",
-                "text":"La brisa marina acaricia tu rostro mientras el sonido de las olas rompiendo en la orilla llena tus oídos. La playa se extiende a tu alrededor, con su arena dorada bajo tus pies. A medida que tus ojos se acostumbran a la luz del día, notás que estás rodeado de una densa jungla en la que los árboles altos y exuberantes parecen esconder secretos.\nLas hojas de la jungla crujen y los cantos de aves desconocidas llenan el aire. Ante ti, una oscura abertura se abre en la densa vegetación, revelando una cueva misteriosa. A lo lejos, entre los restos de un naufragio, vislumbrás destellos metálicos que llaman tu atención. Las opciones son claras"
+                "text":"La brisa marina acaricia tu rostro mientras el sonido de las olas llena tus oídos. La playa se extiende con su arena dorada bajo tus pies. A tu alrededor, la densa jungla parece esconder secretos entre exuberantes árboles. Las hojas crujen en solitario. Ante ti, una oscura abertura revela una cueva, mientras destellos metálicos entre los restos de un naufragio captan tu atención."
             },
             "image": "./Assets/soloFondo.png",
             "answers": [
@@ -145,31 +145,15 @@
                 },
                 {
                     "text": "Machete",
-                    "next": "E2eb",
+                    "next": "E2e",
                     "noFlip": true,
                     "itemId": 2
                 },
                 {
                     "text": "Manzana",
-                    "next": "E2eb",
+                    "next": "E2e",
                     "noFlip": true,
                     "itemId": 1
-                }
-            ]
-        }
-    },
-    {
-        "cards": "E2eb",
-        "content": {
-            "history": {
-                "title":"Restos",
-                "text":"Llegás al naufragio. Revisas entre varios restos y encuentras una serie de elementos que llaman tu atención. Pero tenés que elegir cuales llevarter: pesan y no podés nadar de vuelta con todos ellos"
-            },
-            "image": "./Assets/Restos.jpeg",
-            "answers": [
-                {
-                    "text": "volver a la playa",
-                    "next": "E0"
                 }
             ]
         }
