@@ -147,13 +147,13 @@
                     "text": "Machete",
                     "next": "E2eb",
                     "noFlip": true,
-                    "itemId": 1
+                    "itemId": 2
                 },
                 {
                     "text": "Manzana",
                     "next": "E2eb",
                     "noFlip": true,
-                    "itemId": 2
+                    "itemId": 1
                 }
             ]
         }
