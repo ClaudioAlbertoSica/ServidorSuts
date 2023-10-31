@@ -23,7 +23,8 @@
         "content": {
             "history": {
                 "title":"La playa",
-                "text":"La brisa marina acaricia tu rostro mientras el sonido de las olas llena tus oídos. La playa se extiende con su arena dorada bajo tus pies. A tu alrededor, la densa jungla parece esconder secretos entre exuberantes árboles. Las hojas crujen en solitario. Ante ti, una oscura abertura revela una cueva, mientras destellos metálicos entre los restos de un naufragio captan tu atención."
+                "text":"La brisa marina acaricia tu rostro mientras el sonido de las olas llena tus oídos. La playa se extiende con su arena dorada bajo tus pies. A tu alrededor, la densa jungla parece esconder secretos entre exuberantes árboles. Las hojas crujen en solitario. Ante ti, una oscura abertura revela una cueva, mientras destellos metálicos entre los restos de un naufragio captan tu atención.",
+                "audio": "./Audio/E0V1.mp3"
             },
             "image": "./Assets/soloFondo.png",
             "answers": [
@@ -47,7 +48,8 @@
         "content": {
             "history": {
                 "title":"La maleza",
-                "text":"Al intentar adentrarte, la maleza con espinas te lastima. Sientes cómo los afilados arbustos se clavan en tu piel, causando un dolor punzante y dejando pequeñas heridas que comienzan a sangrar. A pesar de la incomodidad, tu curiosidad y determinación te impulsan a continuar. El sendero se estrecha a medida que avanzas, pero la sensación de descubrimiento te llena de emoción y expectativa."
+                "text":"Al intentar adentrarte, la maleza con espinas te lastima. Sientes cómo los afilados arbustos se clavan en tu piel, causando un dolor punzante y dejando pequeñas heridas que comienzan a sangrar. A pesar de la incomodidad, tu curiosidad y determinación te impulsan a continuar. El sendero se estrecha a medida que avanzas, pero la sensación de descubrimiento te llena de emoción y expectativa.",
+                "audio": "./Audio/E1a.mp3"
             },
             "image": "./Assets/Espinas1.png",
             "answers": [
@@ -61,7 +63,8 @@
                 },
                 {
                     "text": "Abrirte paso con machete",
-                    "next": "E0"
+                    "next": "E2c",
+                    "needItem": 2
                 }
             ]
         }
@@ -131,6 +134,22 @@
         }
     },
     {
+        "cards": "E2c",
+        "content": {
+            "history": {
+                "title":"Serpiente",
+                "text":"Lográs abrirte paso en la jungla, sin mayores problemas. Aparece una gran serpiente, que pretende asfixiarte para comerte. Luchás contra ella y en un azar le cortas la cabeza. te sientes esperanzado y valentia. "
+            },
+            "image": "./Assets/MatasSerpiente.png",
+            "answers": [
+                {
+                    "text": "Next",
+                    "next": "E3"
+                }
+            ]
+        }
+    },
+    {
         "cards": "E2e",
         "content": {
             "history": {
@@ -154,6 +173,22 @@
                     "next": "E2e",
                     "noFlip": true,
                     "itemId": 1
+                }
+            ]
+        }
+    },
+    {
+        "cards": "E3",
+        "content": {
+            "history": {
+                "title":"Aldea",
+                "text":"A lo lejos: observás lo que parece ser una pequeña aldea..."
+            },
+            "image": "./Assets/Aldea.jpeg",
+            "answers": [
+                {
+                    "text": "Buy the game",
+                    "next": "E0"
                 }
             ]
         }
