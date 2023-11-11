@@ -8,7 +8,7 @@ class Router_Items {
     }
 
     start() {
-        this.router.get('/:id?', this.controler.getItem);        
+        this.router.get('/:id?', this.controler.getItem);
         return this.router;
     }
 }

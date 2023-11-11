@@ -14,7 +14,6 @@ class Model_UserFS {
             console.log('error al leer');
         }
         return users;
-
     }
 
     writeFile = async (user) => {
@@ -29,6 +28,8 @@ class Model_UserFS {
         const users = await this.readFile();
         if (name) {
             const userFound = users.find(user => user.uname === name);
+// y password
+// validar dos pasos opcional
             return userFound || {};
         }
     }
@@ -83,7 +84,6 @@ class Model_UserFS {
         }
         return user;
     }
-
 }
 
 export default Model_UserFS;

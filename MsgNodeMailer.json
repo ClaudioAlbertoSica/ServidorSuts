@@ -1,0 +1,17 @@
+[
+    {
+        "type": "create",
+        "subject": "Welcome to SUTS",
+        "msg": "Te damos la bienvenida a SUTS tu usuario se registró con éxito"
+    },
+    {
+        "type": "login",
+        "subject": "Welcome back",
+        "msg": "Te estabamos extrañando"
+    },
+    {
+        "type": "item",
+        "subject": "New item!! ",
+        "msg": "Agregaste un nuevo item a tu inventario: "
+    }
+]
