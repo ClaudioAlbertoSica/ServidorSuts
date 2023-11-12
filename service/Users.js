@@ -20,11 +20,11 @@ class Service_Users {
         return nodeMsg;
     }
 
-    getUser = async (id) => {
+    getUser = async (uname, pass) => {
         let user = {};        
-        if (id !== undefined) {
-            user = await this.model.getUser(id);
-            if (Object.keys(user).length) {
+        if (uname !== undefined) {
+            user = await this.model.getUser(uname, pass);
+            if (Object.keys(user).length && !user.msg) {
                 let msgFile = await this.readNodeMailerFile();
                 let loginMsg = msgFile.find(msg => msg.type === "login");
                 await this.nodeMailer.sendMail(user.uname, loginMsg.subject, loginMsg.msg);

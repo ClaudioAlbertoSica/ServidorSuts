@@ -8,9 +8,9 @@ class Router_Users {
     }
 
     start() {
-        this.router.get('/:id?', this.controler.getUser);
+        this.router.post('/', this.controler.getUser);
         this.router.put('/:id', this.controler.modifyUser);
-        this.router.post('/', this.controler.createUser);
+        this.router.post('/create/', this.controler.createUser);
         this.router.delete('/:id', this.controler.removeUser);
         
         return this.router;

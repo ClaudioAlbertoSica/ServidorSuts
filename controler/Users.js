@@ -6,8 +6,8 @@ class Controler_Users {
     }
 
     getUser = async (req,res) => {
-        const {id} = req.params;
-        const user = await this.service.getUser(id);
+        const {uname, pass} = req.body;
+        const user = await this.service.getUser(uname, pass);
         res.json(user);
     }
 

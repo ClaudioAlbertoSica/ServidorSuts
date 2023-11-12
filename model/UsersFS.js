@@ -24,13 +24,18 @@ class Model_UserFS {
         }
     }
 
-    getUser = async (name) => {
+    getUser = async (name, pass) => {
         const users = await this.readFile();
         if (name) {
             const userFound = users.find(user => user.uname === name);
-// y password
-// validar dos pasos opcional
-            return userFound || {};
+            if (userFound) {
+                if (userFound.pass === pass) {
+                    return userFound;
+                } else {
+                    return {"msg": "Password incorrecto"};
+                }                
+            }
+            return {"msg": "Usuario no se encontro"};
         }
     }
 
