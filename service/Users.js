@@ -1,11 +1,14 @@
 import model from '../model/UsersFS.js';
+import obtainIp from './Geolocalization/obtainIp.js';
 import NodeMailer from './Notifications/Nodemailer.js';
+import Geolocalization from './Geolocalization/obtainLocation.js';
 import fs from 'fs'
 class Service_Users {
     constructor() {
         this.model = new model();
         this.nodeMailer = new NodeMailer();
-
+        this.obtainIp = new obtainIp();
+        this.Geolocalization = new Geolocalization();
     }
 
     readNodeMailerFile = async () => {
@@ -21,7 +24,7 @@ class Service_Users {
     }
 
     getUser = async (uname, pass) => {
-        let user = {};        
+        let user = {};
         if (uname !== undefined) {
             user = await this.model.getUser(uname, pass);
             if (Object.keys(user).length && !user.msg) {
@@ -30,6 +33,8 @@ class Service_Users {
                 await this.nodeMailer.sendMail(user.uname, loginMsg.subject, loginMsg.msg);
             }
         }
+        const ipActual = await this.obtainIp.getUserIP();
+        console.log(await this.Geolocalization.getGeolocation(ipActual))
         return user;
     }
     
