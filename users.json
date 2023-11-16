@@ -29,5 +29,12 @@
 			}
 		],
 		"escene": "E2e"
+	},
+	{
+		"uname": "rocio.bani93@gmail.com",
+		"pass": "123456",
+		"id": "3",
+		"inventory": [],
+		"escene": "E0"
 	}
 ]

@@ -28,6 +28,7 @@ class Model_UserFS {
         const users = await this.readFile();
         if (name) {
             const userFound = users.find(user => user.uname === name);
+            //La validación del pass se debe realizar en el model o en el servicio?
             if (userFound) {
                 if (userFound.pass === pass) {
                     return userFound;
@@ -75,7 +76,7 @@ class Model_UserFS {
                 console.log('falta datos');
             }
         } else {
-            console.log('usuario ya existe');
+            return {"msg": "Usuario existente, por favor inicie sesión"};
         }
     }
 
