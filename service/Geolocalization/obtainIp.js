@@ -1,6 +1,6 @@
-import axios from 'axios' // Use axios for making HTTP requests
+import axios from 'axios'
 
-// Function to get the public IP address of the machine
+
 class obtainIp {
     
     async getUserIP() {
