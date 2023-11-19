@@ -1,8 +1,8 @@
-import model from '../model/ItemsFS.js';
+import model from '../model/modelFactory.js';
 
 class Service_Items {
     constructor() {
-        this.model = new model();
+        this.model = model.get('ITEM');
     }
 
     getItem = async (id) => {

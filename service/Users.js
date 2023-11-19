@@ -1,10 +1,10 @@
-import model from '../model/UsersFS.js';
+import model from '../model/modelFactory.js';
 import NodeMailer from './Notifications/Nodemailer.js';
 
 
 class Service_Users {
     constructor() {
-        this.model = new model();
+        this.model = model.get('USER');
         this.nodeMailer = new NodeMailer();
     }
 

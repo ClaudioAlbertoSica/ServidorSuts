@@ -1,8 +1,8 @@
-import model from '../model/GameFS.js';
+import model from '../model/modelFactory.js';
 
 class Service_Game {
     constructor() {
-        this.model = new model();
+        this.model = model.get('GAME');
     }
 
     getEscene = async (cards) => {
