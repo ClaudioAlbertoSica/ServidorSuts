@@ -4,10 +4,10 @@ import generador from './generador/users.js'
 import Server from "../server.js"
 
 
+const testUser = generador.getLoginUser()
+
 describe('test suts - user Cration', () => {
     describe('POST', () => {
-
-        const newUser = generador.getLoginUser()
 
         let userGuardado = {}
 
@@ -19,14 +19,14 @@ describe('test suts - user Cration', () => {
 
 
 
-            const response = await request.post('/api/users/create/').send(newUser)
+            const response = await request.post('/api/users/create/').send(testUser)
 
             expect(response.status).to.eql(200)
 
             userGuardado = response.body
 
-            expect(userGuardado.uname).to.eql(newUser.uname)
-            expect(userGuardado.pass).to.eql(newUser.pass)
+            expect(userGuardado.uname).to.eql(testUser.uname)
+            expect(userGuardado.pass).to.eql(testUser.pass)
 
             await server.stop()
         })
@@ -42,7 +42,7 @@ describe('test suts - user Cration', () => {
 
             const request = supertest(app)
 
-            const response = await request.post('/api/users/create/').send(newUser)
+            const response = await request.post('/api/users/create/').send(testUser)
 
             expect(response.status).to.eql(200)
 
@@ -62,6 +62,50 @@ describe('test suts - user Cration', () => {
 
 describe('test suts - user Login', () => {
     describe('POST', () => {
+
+        let userRecuperado = {}
+
+        it('Si el usuario existe, lo devuelve y el status es 200', async () => {
+            const server = new Server(8081, 'MONGO')
+            const app = await server.start()
+
+            const request = supertest(app)
+
+            const response = await request.post('/api/users/').send(testUser)
+
+            expect(response.status).to.eql(200)
+
+            userRecuperado = response.body
+
+            expect(userRecuperado.uname).to.eql(testUser.uname)
+            expect(userRecuperado.pass).to.eql(testUser.pass)
+
+            await server.stop()
+        })
+
+        it('El usuario devuelto, debería contar con todas las propiedades esperadas', async () => {
+            expect(userRecuperado).to.include.keys('_id', 'uname', 'pass', 'id', 'inventory', 'escene')
+        })
+
+        it('Si se hace un loggin a un user que no está registrado: el sistema da aviso', async () => {
+            const server = new Server(8081, 'MONGO')
+            const app = await server.start()
+
+            const request = supertest(app)
+
+            const usuarioNoRegistrado = generador.getLoginUser()
+
+            const response = await request.post('/api/users/').send(usuarioNoRegistrado)
+
+            expect(response.status).to.eql(200)
+
+            const mensajeRecibido = response.body
+
+            expect(mensajeRecibido).to.include.keys('msg')
+            expect(mensajeRecibido.msg).to.eql("Usuario no se encontro")
+
+            await server.stop()
+        })
 
     })
 })
