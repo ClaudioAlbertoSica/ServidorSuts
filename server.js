@@ -19,7 +19,7 @@ app.use(session({
 }))
 
 app.use(cors());
-app.use('/*', new RouterLogin().start());
+app.use('/', new RouterLogin().start());
 app.use('/api/users', new RouterUsers().start());
 app.use('/api/game', new RouterGame().start());
 app.use('/api/items', new RouterItems().start());

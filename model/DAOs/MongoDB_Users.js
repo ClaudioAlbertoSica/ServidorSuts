@@ -9,7 +9,7 @@ class MongoDB_Users {
             throw new Error(`Conexión con la Base de Datos no establecida`)
         }
 
-        let message = 'Usuario no encontrado' // mensaje a retornar, en caso de no encotrar usuario
+        let msg = 'Usuario no encontrado' // mensaje a retornar, en caso de no encotrar usuario
 
         if (name) {
             const userFound = await CnxMongoDB.db.collection('users').findOne({ uname: name })
@@ -17,11 +17,11 @@ class MongoDB_Users {
             if (userFound) {
                 return userFound;
             } else {
-                return { message };
+                return { msg };
             }
         }
-        message = 'El usuario no puede estar vacío'
-        return { message };
+        msg = 'El usuario no puede estar vacío'
+        return { msg };
     }
 
 
@@ -42,9 +42,6 @@ class MongoDB_Users {
             } else {
                 userMod = { ...currentUser, ...user };
             }
-            console.log(currentUser)
-            console.log("-------------")
-            console.log(userMod)
             await CnxMongoDB.db.collection('users').replaceOne(
                 { id: id }, //filter
                 ({ ...userMod })
@@ -65,7 +62,7 @@ class MongoDB_Users {
         }
 
         const exist = await CnxMongoDB.db.collection('users').findOne({ uname: user.name })
-        const users = await CnxMongoDB.db.collection('users').find({}).toArray()
+        const users = await CnxMongoDB.db.collection('users').find({}).toArray() // hacerlo con un count. Solo hace falta la cantidad para calcular el #ID
 
         if (!exist) {
             if (user.uname && user.pass) {

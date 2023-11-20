@@ -7,7 +7,7 @@ class Service_lOGIN {
 
     authentication = async (Username, Password) => {
         const userFromModel = await this.model.getUser(Username)
-        if (userFromModel && userFromModel.pass == Password) {
+        if (Object.keys(userFromModel).length && userFromModel.pass == Password && Password) {
             return true
         } else {
             return false

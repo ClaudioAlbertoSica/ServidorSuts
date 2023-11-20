@@ -8,9 +8,8 @@ class Router_Login {
     }
 
     start() {
-        this.router.all('/', this.controler.validarLogin);
+        this.router.all('/*', this.controler.validarLogin)
         this.router.post('/logout', this.controler.logout)
-
         return this.router;
     }
 }
