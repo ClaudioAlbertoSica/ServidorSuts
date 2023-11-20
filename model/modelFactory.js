@@ -9,7 +9,7 @@ import config from '../config.js'
 // Este es un Factory, para el Data Model <-- Piensoq eu podríamos armar un buen Abstract Factory a partir de esto
 // la variabel "config" puede ser FILE o MONGO
 class ModelSelector {
-    static get(DAOrequerido) {
+    static get(DAOrequerido,persistencia) {
         const tipoDAO = DAOrequerido
         if (config.MODEL_PERSISTANCE == 'FILE') {
 

@@ -42,7 +42,7 @@ class MongoDB_Users {
 
     createUser = async (user) => {
         try {
-            const exist = await CnxMongoDB.db.collection('users').findOne({ uname: user.name })
+            const exist = await CnxMongoDB.db.collection('users').findOne({ uname: user.uname })
             const users = await CnxMongoDB.db.collection('users').find({}).toArray()
             if (!exist) {
                 if (user.uname && user.pass) {

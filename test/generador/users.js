@@ -9,7 +9,7 @@ const getFullUSer = _ => ({
 })
 
 const getLoginUser = _ => ({
-    name: "testMail@yahoo.com",
+    uname: faker.internet.email(faker.internet.userName()),
     pass: faker.internet.userName()
 })
 

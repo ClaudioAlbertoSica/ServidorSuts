@@ -4,50 +4,65 @@ import generador from './generador/users.js'
 import Server from "../server.js"
 
 
-describe('test suts - users', () =>{
+describe('test suts - user Cration', () => {
     describe('POST', () => {
+
+        const newUser = generador.getLoginUser()
+
+        let userGuardado = {}
+
         it('debería generar un usuario nuevo, en la base de datos (con el mail y la contraseña provisto)', async () => {
-            const server = new Server(8081,'MONGO')
-            const app = await server.start() 
+            const server = new Server(8081, 'MONGO')
+            const app = await server.start()
 
             const request = supertest(app)
 
-            const newUser = generador.getLoginUser()
-            console.log("nuevo --------------")
-            console.log(newUser)
+
+
             const response = await request.post('/api/users/create/').send(newUser)
 
             expect(response.status).to.eql(200)
 
-            const userGuardado = response.body
+            userGuardado = response.body
 
-            console.log("guardado --------------")
-            console.log(userGuardado)
-            
-            
-      //      expect(userGuardado).to.include.keys('_id','uname','pass','id','inventory','escene')
-            expect(userGuardado.uname).to.eql(newUser.name)
+            expect(userGuardado.uname).to.eql(newUser.uname)
             expect(userGuardado.pass).to.eql(newUser.pass)
-    /*        expect(userGuardado.id).to.eql(newUser.id)
-            expect(userGuardado.inventory).to.eql(newUser.inventory)
-            expect(userGuardado.escene).to.eql(newUser.escene)*/
 
             await server.stop()
+        })
+
+        it('El usuario devuelto, debería contar con todas las propiedades esperadas', async () => {
+            expect(userGuardado).to.include.keys('_id', 'uname', 'pass', 'id', 'inventory', 'escene')
 
         })
+
+        it('Al intentar crear un usuario que ya existe en la BD: devuelve mensaje indicando acerca de la situación', async () => {
+            const server = new Server(8081, 'MONGO')
+            const app = await server.start()
+
+            const request = supertest(app)
+
+            const response = await request.post('/api/users/create/').send(newUser)
+
+            expect(response.status).to.eql(200)
+
+            const mensajeRecibido = response.body
+
+            expect(mensajeRecibido).to.include.keys('msg')
+            expect(mensajeRecibido.msg).to.eql("Usuario existente, por favor inicie sesión")
+
+            await server.stop()
+        })
     })
-
-
-
-
-
-
-
-
-
-
-
 })
 
 
+
+
+
+describe('test suts - user Login', () => {
+    describe('POST', () => {
+
+    })
+})
 
