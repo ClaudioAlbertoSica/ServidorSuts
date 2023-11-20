@@ -1,0 +1,41 @@
+.formComplitionRequest {
+    display: flex;
+    width: 260px;
+    height: 210px;
+    align-content: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: #e8e8e8;
+    border-radius: 6px;
+    box-shadow: 0px 3px 3px #b5b5b5;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    /* align-content: center; */
+    align-items: flex-start;
+    gap: 22px;
+    justify-content: center;
+}
+
+label {
+    display: inline-block;
+    width: 40px;
+    color: #292929;
+}
+
+input {
+    border: 1px solid grey;
+    border-radius: 3px;
+}
+
+.SubmitForm {
+    border: none;
+    background-color: #4ec23f;
+    padding: 6px;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+}

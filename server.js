@@ -12,6 +12,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true})); //preguntar bien
 
+app.use('/', express.static('public'))
+
 app.use(session({
     secret: 'Este es un server seguro',
     resave: false,
