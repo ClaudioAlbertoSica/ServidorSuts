@@ -6,28 +6,44 @@ class Controler_Users {
     }
 
     getUser = async (req,res) => {
-        const {uname, pass} = req.body;
-        const user = await this.service.getUser(uname, pass);
-        res.json(user);
+        try {
+            const {uname, pass} = req.body;
+            const user = await this.service.getUser(uname, pass);
+            res.json(user);
+        } catch (error){
+            res.status(500).send(error.mesage)
+        }
     }
 
     modifyUser = async (req, res) => {
-        const {id} = req.params;
-        const user = req.body;
-        const userMod = await this.service.modifyUser(id, user);
-        res.json(userMod);
+        try {
+            const {id} = req.params;
+            const user = req.body;
+            const userMod = await this.service.modifyUser(id, user);
+            res.json(userMod);
+        } catch (error){
+            res.status(500).send(error.mesage)
+        }
     }
 
     createUser = async (req,res) => {
-        const user = req.body;
-        const userCreated = await this.service.createUser(user);
-        res.json(userCreated);
+        try {
+            const user = req.body;
+            const userCreated = await this.service.createUser(user);
+            res.json(userCreated);
+        } catch (error){
+            res.status(500).send(error.mesage)
+        }
     }
 
     removeUser = async (req, res) => {
-        const { id } = req.params;
-        const userRemoved = await this.service.removeUser(id);
-        res.json(userRemoved);
+        try {
+            const { id } = req.params;
+            const userRemoved = await this.service.removeUser(id);
+            res.json(userRemoved);
+        } catch (error){
+            res.status(500).send(error.mesage)
+        }
     }
 }
 

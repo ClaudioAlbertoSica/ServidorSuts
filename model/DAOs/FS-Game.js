@@ -11,18 +11,22 @@ class Model_GameFS {
             const read = await fs.promises.readFile(this.logicGame, 'utf-8');
             escenes = JSON.parse(read);
         } catch {
-            console.log('error al leer');
+            throw new Error(`No se logro leer la ruta ${this.logicGame}`);
         }
         return escenes;
 
     }
 
     getEscene = async (cards) => {
-        const escenes = await this.readFile();
-        if (cards) {
-            const esceneFound = escenes.find(escene => escene.cards === cards);
-            return esceneFound || {};
-        } 
+        try {
+            const escenes = await this.readFile();
+            if (cards) {
+                const esceneFound = escenes.find(escene => escene.cards === cards);
+                return esceneFound || {};
+            }
+        } catch {
+            throw new Error(`No se logro traer la logica del juego de la ruta ${this.logicGame}`);
+        }
     }
 
 }

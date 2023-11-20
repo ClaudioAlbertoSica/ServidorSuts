@@ -36,7 +36,7 @@ modifyUser = async (id, user) => {
 createUser = async (user) => {
     const userCreated = await this.model.createUser(user);
     if (Object.keys(userCreated).length && !userCreated.msg) {
-        await this.nodeMailer.sendMail(user.uname, "create");
+//        await this.nodeMailer.sendMail(user.uname, "create");
     }
     return userCreated;
 }
