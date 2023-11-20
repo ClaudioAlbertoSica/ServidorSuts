@@ -5,7 +5,6 @@ class MongoDB_Items {
         try {
             if (id) {
                 const itemFound = await CnxMongoDB.db.collection('items').findOne({ id: id })
-                console.log(itemFound)
                 return itemFound || {}
             }
         } catch {

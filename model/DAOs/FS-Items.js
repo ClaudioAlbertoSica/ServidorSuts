@@ -22,7 +22,6 @@ class Model_ItemsFS {
             const items = await this.readFile();
             if (id) {
                 const itemFound = items.find(item => item.id === id);
-                console.log(itemFound)
                 return itemFound || {};
             }
         } catch {

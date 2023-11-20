@@ -23,9 +23,6 @@ class MongoDB_Users {
                 } else {
                     userMod = { ...currentUser, ...user };
                 }
-/*                 console.log(currentUser)
-                console.log("-------------")
-                console.log(userMod) */
                 await CnxMongoDB.db.collection('users').replaceOne(
                     { id: id }, //filter
                     ({ ...userMod })

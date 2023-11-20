@@ -29,9 +29,7 @@ class Controler_Users {
     createUser = async (req,res) => {
         try {
             const user = req.body;
-            console.log(user)
             const userCreated = await this.service.createUser(user);
-            console.log(res.status)
             res.json(userCreated);
         } catch (error){
             res.status(500).send(error.mesage)
