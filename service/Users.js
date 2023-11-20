@@ -8,10 +8,10 @@ class Service_Users {
         this.nodeMailer = new NodeMailer();
     }
 
-    getUser = async (uname, pass) => {
+    getUser = async (uname) => {
         let user = {};
         if (uname !== undefined) {
-            user = await this.model.getUser(uname, pass);
+            user = await this.model.getUser(uname);
             if (Object.keys(user).length && !user.msg) {
                 await this.nodeMailer.sendMail(user.uname, "login");
             }

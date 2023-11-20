@@ -3,14 +3,23 @@ import express, { Router } from "express";
 import RouterUsers from './router/Users.js';
 import RouterGame from './router/Game.js'
 import RouterItems from './router/Items.js';
+import RouterLogin from './router/Login.js';
 import config from './config.js'
 import CnxMongoDB from './model/Connection/DBMongo.js'
+import session from 'express-session'
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true})); //preguntar bien
 
+app.use(session({
+    secret: 'Este es un server seguro',
+    resave: false,
+    saveUninitialized: false,
+}))
+
 app.use(cors());
+app.use('/*', new RouterLogin().start());
 app.use('/api/users', new RouterUsers().start());
 app.use('/api/game', new RouterGame().start());
 app.use('/api/items', new RouterItems().start());
