@@ -1,8 +1,8 @@
 import model from '../model/modelFactory.js';
 
 class Service_Items {
-    constructor() {
-        this.model = model.get('ITEM');
+    constructor(persistencia) {
+        this.model = model.get(persistencia);
     }
 
     getItem = async (id) => {

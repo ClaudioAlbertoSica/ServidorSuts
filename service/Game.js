@@ -1,8 +1,8 @@
 import model from '../model/modelFactory.js';
 
 class Service_Game {
-    constructor() {
-        this.model = model.get('GAME');
+    constructor(persistencia) {
+        this.model = model.get(persistencia);
     }
 
     getEscene = async (cards) => {

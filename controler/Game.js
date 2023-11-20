@@ -1,8 +1,8 @@
 import service from '../service/Game.js'
 
 class Controler_Game {
-    constructor() {
-        this.service = new service();
+    constructor(persistencia) {
+        this.service = new service(persistencia);
     }
 
     obtenerEscena = async (req,res) => {

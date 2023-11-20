@@ -1,8 +1,8 @@
 import service from '../service/Items.js'
 
 class Controler_Items {
-    constructor() {
-        this.service = new service();
+    constructor(persistencia) {
+        this.service = new service(persistencia);
     }
 
     getItem = async (req,res) => {

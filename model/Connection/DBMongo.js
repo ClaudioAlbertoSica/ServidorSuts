@@ -18,8 +18,10 @@ class CnxMongoDB {
         CnxMongoDB.connected = true
     }
 
-    static desconectar = () => {
-        
+    static desconectar = async () => {
+        if(!CnxMongoDB.connected) return
+        await CnxMongoDB.client.close()
+        CnxMongoDB.connected = false
     }
 }
 

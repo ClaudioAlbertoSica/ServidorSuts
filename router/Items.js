@@ -2,9 +2,9 @@ import expres from 'express';
 import controler from '../controler/Items.js'
 
 class Router_Items {
-    constructor() {
+    constructor(persistencia) {
         this.router = expres.Router();
-        this.controler = new controler();
+        this.controler = new controler(persistencia);
     }
 
     start() {

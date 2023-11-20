@@ -1,8 +1,8 @@
 import service from '../service/Users.js'
 
 class Controler_Users {
-    constructor() {
-        this.service = new service();
+    constructor(persistencia) {
+        this.service = new service(persistencia);
     }
 
     getUser = async (req,res) => {

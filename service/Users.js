@@ -3,8 +3,8 @@ import NodeMailer from './Notifications/Nodemailer.js';
 
 
 class Service_Users {
-    constructor() {
-        this.model = model.get('USER');
+    constructor(persistencia) {
+        this.model = model.get(persistencia);
         this.nodeMailer = new NodeMailer();
     }
 
