@@ -6,11 +6,15 @@ class Service_Game {
     }
 
     getEscene = async (cards) => {
+        try{
         let escene = {};        
         if (cards !== undefined) {
             escene = await this.model.getEscene(cards);
         }
         return escene;
+    } catch(error){
+        throw(error)
+    }
     }
 }
 
