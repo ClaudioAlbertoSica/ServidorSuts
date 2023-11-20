@@ -11,31 +11,40 @@ class Service_Users {
     getUser = async (uname, pass) => {
         let user = {};
         if (uname !== undefined) {
-            user = await this.model.getUser(uname, pass);
-            if (Object.keys(user).length && !user.msg) {
-                await this.nodeMailer.sendMail(user.uname, "login");
-            }
+            user = await this.model.getUser(uname);
+            if ( Object.keys(user).length){
+                if (pass && user.pass == pass){
+      //              await this.nodeMailer.sendMail(user.uname, "login");
+                } else {
+                    user = {"msg": "Password incorrecto"}
+                }
+            } else {
+                user = { "msg": "Usuario no se encontro" }     
+        }
+        } else {
+            user = { "msg": "Usuario no se encontro" }
         }
         return user;
     }
-    
-    modifyUser = async (id, user) => {
-        const userMod = await this.model.modifyUser(id, user);
-        return userMod;
+
+
+modifyUser = async (id, user) => {
+    const userMod = await this.model.modifyUser(id, user);
+    return userMod;
+}
+
+createUser = async (user) => {
+    const userCreated = await this.model.createUser(user);
+    if (Object.keys(userCreated).length && !userCreated.msg) {
+        await this.nodeMailer.sendMail(user.uname, "create");
     }
-    
-    createUser = async (user) => {
-        const userCreated = await this.model.createUser(user);
-        if (Object.keys(userCreated).length && !userCreated.msg) {
-            await this.nodeMailer.sendMail(user.uname, "create");
-        }
-        return userCreated;
-    }
-    
-    removeUser = async (id) => {
-        const userRemoved = await this.model.removeUser(id);
-        return userRemoved;
-    }
+    return userCreated;
+}
+
+removeUser = async (id) => {
+    const userRemoved = await this.model.removeUser(id);
+    return userRemoved;
+}
 }
 
 export default Service_Users;

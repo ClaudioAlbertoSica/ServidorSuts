@@ -24,20 +24,13 @@ class Model_UserFS {
         }
     }
 
-    getUser = async (name, pass) => {
+    getUser = async (name) => {
         const users = await this.readFile();
-        if (name) {
+
             const userFound = users.find(user => user.uname === name);
-            //La validación del pass se debe realizar en el model o en el servicio?
-            if (userFound) {
-                if (userFound.pass === pass) {
-                    return userFound;
-                } else {
-                    return {"msg": "Password incorrecto"};
-                }                
-            }
-            return {"msg": "Usuario no se encontro"};
-        }
+
+            return userFound || {};
+
     }
 
     modifyUser = async (id, user) => {

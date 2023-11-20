@@ -3,24 +3,15 @@ import CnxMongoDB from "../Connection/DBMongo.js";
 class MongoDB_Users {
 
 
-    getUser = async (name, pass) => {
+    getUser = async (name) => {
 
         if (!CnxMongoDB.connected) {
             throw new Error(`Conexión con la Base de Datos no establecida`)
         }
 
-        if (name) {
             const userFound = await CnxMongoDB.db.collection('users').findOne({ uname: name })
-            //La validación del pass se debe realizar en el model o en el servicio?
-            if (userFound) {
-                if (userFound.pass === pass) {
-                    return userFound;
-                } else {
-                    return { "msg": "Password incorrecto" };
-                }
-            }
-            return { "msg": "Usuario no se encontro" };
-        }
+
+        return userFound || {}
     }
 
 
