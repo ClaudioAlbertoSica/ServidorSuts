@@ -15,7 +15,7 @@ class Service_Users {
                 user = await this.model.getUser(uname);
                 if (Object.keys(user).length) {
                     if (pass && user.pass == pass) {
-                    await this.nodeMailer.sendMail(user.uname, "login");
+                        await this.nodeMailer.sendMail(user.uname, "login");
                     } else {
                         user = { "msg": "Password incorrecto" }
                     }
@@ -23,7 +23,7 @@ class Service_Users {
                     user = { "msg": "Usuario no se encontro" }
                 }
             } else {
-                user = { "msg": "Usuario no se encontro" }
+                user = { "msg": "Usuario no definido" }
             }
             return user;
         } catch (error) {
@@ -45,7 +45,7 @@ class Service_Users {
         try {
             const userCreated = await this.model.createUser(user);
             if (Object.keys(userCreated).length && !userCreated.msg) {
-            await this.nodeMailer.sendMail(user.uname, "create");
+                await this.nodeMailer.sendMail(user.uname, "create");
             }
             return userCreated;
         } catch (error) {

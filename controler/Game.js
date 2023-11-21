@@ -6,9 +6,13 @@ class Controler_Game {
     }
 
     obtenerEscena = async (req,res) => {
-        const {cards} = req.params;
-        const escene = await this.service.getEscene(cards);
-        res.json(escene);
+        try {
+            const {cards} = req.params;
+            const escene = await this.service.getEscene(cards);
+            res.json(escene);
+        } catch (error){
+            res.status(500).send(error.mesage)
+        }
     }
 }
 

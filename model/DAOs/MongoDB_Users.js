@@ -53,7 +53,7 @@ class MongoDB_Users {
     
                     return await CnxMongoDB.db.collection('users').findOne({ uname: user.uname });
                 } else {
-                    console.log('falta datos');
+                    return { "msg": "Faltan datos para completar la solicitud de creacion de usuario" };
                 }
             } else {
                 return { "msg": "Usuario existente, por favor inicie sesión" };
@@ -61,7 +61,6 @@ class MongoDB_Users {
         } catch {
             throw new Error(`Conexión con la Base de Datos no establecida para createUser`);
         }
-        
     }
 
 

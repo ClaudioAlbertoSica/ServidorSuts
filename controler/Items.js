@@ -6,9 +6,13 @@ class Controler_Items {
     }
 
     getItem = async (req,res) => {
-        const {id} = req.params;
-        const item = await this.service.getItem(id);
-        res.json(item);
+        try {
+            const {id} = req.params;
+            const item = await this.service.getItem(id);
+            res.json(item);
+        } catch (error){
+            res.status(500).send(error.mesage)
+        }
     }
 }
 
